@@ -19,7 +19,11 @@ dashboard_component = st.components.v2.component(
     js=js,
 )
 
-st.set_page_config(page_title="El Burguillo · Observatorio del agua", layout="wide")
+st.set_page_config(
+    page_title="El Burguillo · Observatorio del agua",
+    page_icon=str(ROOT / "static" / "icon-512.png"),
+    layout="wide",
+)
 
 
 def refresh_manual():

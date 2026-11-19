@@ -1,6 +1,15 @@
 "use strict";
 
 export default function ({ data: input, parentElement, setTriggerValue }) {
+let touchIcon = document.head.querySelector('link[rel="apple-touch-icon"]');
+if (!touchIcon) {
+  touchIcon = document.createElement("link");
+  touchIcon.rel = "apple-touch-icon";
+  touchIcon.sizes = "180x180";
+  document.head.append(touchIcon);
+}
+touchIcon.href = new URL("app/static/apple-touch-icon.png", document.baseURI).href;
+
 const cards = [
   ["E_17VPCT01", "◔"],
   ["E_17VICT01", "≈"],
