@@ -32,8 +32,8 @@ st.html(
         document.head.querySelectorAll(`link[rel="${rel}"]`).forEach((link) => link.remove());
       }
       const links = [
-        ["manifest", "/app/static/manifest.webmanifest"],
-        ["apple-touch-icon", "/app/static/apple-touch-icon.png"],
+        ["manifest", "app/static/manifest.webmanifest"],
+        ["apple-touch-icon", "app/static/apple-touch-icon.png"],
       ];
       for (const [rel, href] of links) {
         const link = document.createElement("link");
