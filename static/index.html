@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142533">
+  <title>El Burguillo · Observatorio del agua</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">≈</span><span>OBSERVATORIO <b>DEL AGUA</b></span></div>
+    <a class="source-link" href="https://saihtajo.chtajo.es/tiemporeal" target="_blank" rel="noopener noreferrer">Fuente oficial ↗</a>
+  </header>
+  <main>
+    <section class="hero">
+      <svg class="hero-reservoir" viewBox="0 0 1370 768" aria-hidden="true" focusable="false">
+        <path fill-rule="evenodd" d="M0 610 L48 588 81 577 106 561 133 553 152 532 170 520 184 496 208 490 221 472 245 466 255 447 278 443 264 426 253 420 268 407 294 410 311 400 299 384 276 372 282 357 301 366 319 356 308 339 322 335 342 348 357 367 370 381 384 376 398 359 415 350 429 330 447 322 453 304 460 288 466 324 480 338 499 349 519 358 540 363 556 353 568 369 565 382 583 387 600 386 618 394 634 393 650 403 665 399 674 406 683 398 691 378 700 376 704 405 712 419 727 422 739 432 751 428 766 435 780 428 795 432 810 423 823 426 835 420 845 413 858 414 870 421 883 416 897 409 910 405 921 395 933 384 935 363 928 350 933 332 939 319 941 291 936 276 942 264 939 248 945 235 940 222 947 209 940 194 945 180 941 166 951 153 949 142 959 127 960 109 967 98 968 81 974 69 973 48 978 29 979 0 990 0 986 28 984 52 981 74 980 93 974 113 974 132 967 146 976 163 974 179 981 194 976 209 984 223 976 237 979 251 968 264 970 279 965 294 961 311 962 326 967 340 979 339 992 328 1007 321 1021 305 1035 293 1045 279 1054 275 1061 291 1051 310 1047 329 1037 343 1028 358 1033 373 1044 381 1053 375 1059 357 1071 346 1083 342 1083 367 1092 376 1110 382 1126 388 1143 391 1156 397 1173 395 1191 388 1208 384 1222 384 1236 392 1249 398 1261 397 1271 389 1280 373 1290 362 1300 352 1306 350 1303 374 1307 389 1320 400 1331 409 1343 412 1354 426 1360 441 1356 463 1336 467 1315 467 1294 469 1276 469 1258 467 1246 471 1236 487 1225 481 1217 477 1208 483 1197 480 1185 483 1176 493 1168 483 1156 480 1146 486 1134 481 1124 469 1124 459 1117 452 1103 450 1088 456 1075 465 1060 470 1047 481 1033 484 1022 497 1009 506 996 505 983 492 969 481 955 479 944 486 939 499 944 514 940 528 934 541 935 554 930 569 928 584 921 601 920 619 915 636 910 652 909 674 905 690 903 714 899 740 896 768 891 736 895 709 894 689 898 670 895 649 901 633 898 617 904 601 902 585 898 568 886 557 871 552 856 542 850 526 833 518 817 511 803 514 792 511 781 521 772 532 761 536 750 552 740 553 730 546 725 532 724 514 713 503 698 501 686 507 675 522 668 539 660 556 649 547 641 531 630 520 620 525 608 539 596 550 599 530 605 515 599 503 585 496 571 494 554 489 539 480 524 476 510 480 495 469 481 459 466 466 451 464 438 470 423 472 410 482 395 487 378 492 363 497 347 502 333 508 318 512 303 516 288 521 271 526 254 530 238 537 221 541 204 549 188 554 171 561 154 570 138 577 121 584 104 591 88 598 70 603 51 611 32 616 16 623 0 628 Z M949 371 C954 359 964 358 974 365 C982 374 978 387 968 392 C958 395 949 389 949 379 Z"/>
+      </svg>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> SAIH TAJO · CUENCA DEL ALBERCHE</p>
+        <h1>El Burguillo</h1>
+        <p class="subtitle">El estado del embalse, en perspectiva.</p>
+        <p class="location">Ávila, España <span>／</span> Cuenca del Alberche</p>
+      </div>
+      <div class="hero-right">
+        <span class="hero-label">SEGUIMIENTO HIDROLÓGICO</span>
+        <div class="water-icon" aria-hidden="true">≈</div>
+        <span>Datos de la Confederación<br>Hidrográfica del Tajo</span>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="section-heading">
+        <div><p class="eyebrow muted">LA ÚLTIMA LECTURA</p><h2>El embalse hoy</h2></div>
+        <div class="actions">
+          <span id="sync-status" class="sync-status" role="status">Conectando…</span>
+          <button id="refresh" class="refresh" type="button">↻ <span>Actualizar</span></button>
+        </div>
+      </div>
+      <div id="notice" class="notice" role="alert" hidden></div>
+      <div id="cards" class="cards" aria-live="polite"></div>
+    </section>
+
+    <section class="context">
+      <div class="section-heading">
+        <div><p class="eyebrow muted">LLUVIA, RÍO Y EMBALSE AGUAS ABAJO</p><h2>El entorno del Burguillo</h2><p class="section-description">Tres estaciones para seguir la evolución de la cuenca.</p></div>
+      </div>
+      <div id="context-stations" aria-live="polite"></div>
+      <p class="history-note">Un porcentaje superior al 100 % en Charco del Cura es una señal a revisar, pero por sí solo no confirma un vertido ni su causa. Contrástalo con la salida del Burguillo y la información oficial.</p>
+    </section>
+
+    <section class="history">
+      <div class="section-heading history-heading">
+        <div><p class="eyebrow muted">MEDICIONES RECIENTES</p><h2>La evolución</h2><p class="section-description">Consulta las mediciones recientes incluidas por el SAIH para cada indicador.</p></div>
+        <div class="controls">
+          <label for="metric">Indicador</label>
+          <select id="metric"></select>
+        </div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-head"><div><h3 id="chart-title">Volumen embalsado</h3><span id="chart-subtitle">Esperando datos</span></div><span class="chart-badge">MEDICIONES HORARIAS</span></div>
+        <div class="chart-wrap"><svg id="chart" viewBox="0 0 1000 260" role="img" aria-label="Gráfico de evolución"></svg><div id="chart-empty" class="chart-empty" hidden>No hay mediciones para mostrar.</div></div>
+        <div class="chart-footer"><span id="chart-start">—</span><span id="chart-end">—</span></div>
+      </div>
+      <p class="history-note">Se muestran las mediciones que vienen en la respuesta actual del SAIH (aproximadamente las últimas 24 horas). No se guardan y desaparecen al reiniciar la aplicación.</p>
+    </section>
+  </main>
+  <footer><span><b>EL BURGUILLO</b> · Observatorio del agua</span><span>Datos automáticos del SAIH Tajo; pueden no estar validados. Horas mostradas tal como las publica la fuente.</span></footer>
+</body>
+</html>
