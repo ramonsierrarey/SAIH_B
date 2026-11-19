@@ -22,7 +22,7 @@ Visita `http://localhost:8501`. Para detenerlo, pulsa `Ctrl+C`. Al reiniciar la 
 
 Sube el proyecto a un repositorio de GitHub, conecta el repositorio en [Streamlit Community Cloud](https://streamlit.io/cloud) y selecciona `app.py` como archivo principal. Community Cloud instalará las dependencias de `requirements.txt`. No se necesita una base de datos ni un volumen persistente. Comprueba que el servicio pueda acceder a los endpoints del SAIH desde la nube.
 
-Para añadir un acceso directo en el móvil, abre la URL publicada y selecciona «Añadir a pantalla de inicio» en el menú del navegador. La aplicación proporciona un icono para la pestaña y para Safari en iPhone; la apariencia del acceso directo puede variar según el navegador.
+Para añadir la aplicación a la pantalla de inicio, abre la URL publicada en el navegador del móvil y selecciona «Añadir a pantalla de inicio». La aplicación se identifica como `SAIH_B` y proporciona un icono propio. En iPhone, usa Safari; en Android, Chrome.
 
 ## Servidor con Docker
 

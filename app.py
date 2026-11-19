@@ -20,9 +20,45 @@ dashboard_component = st.components.v2.component(
 )
 
 st.set_page_config(
-    page_title="El Burguillo · Observatorio del agua",
+    page_title="SAIH_B",
     page_icon=str(ROOT / "static" / "icon-512.png"),
     layout="wide",
+)
+
+st.html(
+    """<script>
+    (() => {
+      for (const rel of ["manifest", "apple-touch-icon"]) {
+        document.head.querySelectorAll(`link[rel="${rel}"]`).forEach((link) => link.remove());
+      }
+      const links = [
+        ["manifest", "/app/static/manifest.webmanifest"],
+        ["apple-touch-icon", "/app/static/apple-touch-icon.png"],
+      ];
+      for (const [rel, href] of links) {
+        const link = document.createElement("link");
+        link.rel = rel;
+        link.href = href;
+        document.head.append(link);
+      }
+      const metadata = [
+        ["application-name", "SAIH_B"],
+        ["apple-mobile-web-app-title", "SAIH_B"],
+        ["apple-mobile-web-app-capable", "yes"],
+        ["theme-color", "#142533"],
+      ];
+      for (const [name, content] of metadata) {
+        let meta = document.head.querySelector(`meta[name="${name}"]`);
+        if (!meta) {
+          meta = document.createElement("meta");
+          meta.name = name;
+          document.head.append(meta);
+        }
+        meta.content = content;
+      }
+    })();
+    </script>""",
+    unsafe_allow_javascript=True,
 )
 
 
